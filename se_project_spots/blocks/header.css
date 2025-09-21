@@ -1,0 +1,16 @@
+.header {
+  background-color: #fff;
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0 auto;
+}
+
+.header__logo {
+  display: block; /* optional, default is inline */
+  margin: 0 auto; /* works if parent is block-based (not needed here with flex) */
+  padding: 10px 0;
+  width: 96px;
+  height: 24px;
+}

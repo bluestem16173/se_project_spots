@@ -1,0 +1,158 @@
+.profile {
+  display: flex;
+  padding-top: 34px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+}
+
+.profile__avatar {
+  margin-right: 20px;
+  height: 190px;
+  width: 190px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 6px;
+  font-size: 32px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__description {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__edit-btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center; /* vertical centering */
+  gap: 8px; /* space between icon and text */
+
+  width: fit-content; /* Hug content width */
+  height: auto; /* Hug content height */
+
+  border: none; /* flat button, no default border */
+  border-radius: 8px; /* optional, remove if you want square */
+  background: transparent; /* flat look, adjust if you want color */
+  opacity: 0.7; /* 70% opacity */
+
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.5;
+}
+
+.profile__edit-btn:hover {
+  opacity: 1;
+}
+
+.profile__add-btn {
+  margin-left: auto;
+  margin-top: auto;
+  background-color: black;
+  color: #fff;
+  display: flex; /* line up icon + text horizontally */
+  align-items: center; /* vertically center them */
+  gap: 8px; /* spacing between icon and text */
+
+  width: fit-content; /* fixed width */
+  height: 52px; /* fixed height */
+  padding: 18px 32px; /* top/bottom 18px, sides 32px */
+
+  border: none; /* remove default button border */
+  border-radius: 8px; /* rounded corners */
+  cursor: pointer;
+}
+
+.profile__add-btn:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    width: 100%;
+    /*align-items: stretch;
+    text-align: left;
+    padding-top: 20px;
+    margin: 0 auto;*/
+  }
+  .profile__name {
+    font-size: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 288px;
+  }
+
+  .profile__description {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 288px;
+  }
+
+  .profile__avatar {
+    height: 80px;
+    width: 80px;
+    padding: 0 0 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile__add-btn {
+    flex: 1; /* take up all available flex space */
+    margin-left: 0; /* reset the auto margin */
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    padding: 18px 32px;
+    transition: opacity 0.2s ease;
+  }
+
+  .profile__column {
+    width: 100%;
+    align-items: stretch; /* let inner items stretch full width */
+    text-align: center; /*centers the text in the profile div*/
+  }
+
+  .profile__edit-btn {
+    margin-top: 0; /* override the desktop push-down */
+    width: 100%; /* match add button width */
+    height: auto;
+    align-self: stretch; /* ensure full width inside column */
+    justify-content: center; /* center icon+label within the full-width btn */
+  }
+  .profile__edit-btn img {
+    width: 16px;
+    height: 16px; /* keeps icon aligned with 16px line height */
+    display: block;
+  }
+
+  .profile__edit-btn:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}

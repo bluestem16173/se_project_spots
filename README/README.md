@@ -54,15 +54,15 @@ This was a project to create a responsive web design project showcasing a profil
 
 ### Desktop (≥ 1024px)
 
-![Spots Desktop](./images/readme/spots-desktop.png)
+![Spots Desktop](./images/spots-desktop.png)
 
 ### Tablet (~768px)
 
-![Spots Tablet](./images/readme/spots-tablet.png)
+![Spots Tablet](./images/spots-tablet.png)
 
 ### Mobile (≤ 627px)
 
-![Spots Mobile](./images/readme/spots-mobile.png)
+![Spots Mobile](./images/spots-mobile.png)
 
 ## Project Structure
 

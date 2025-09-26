@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+}
+
+.footer__content {
+  display: flex;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 16px;
+}

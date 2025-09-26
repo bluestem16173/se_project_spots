@@ -3,6 +3,7 @@
   height: 413px;
   width: 100%;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .card__title {

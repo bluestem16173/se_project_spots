@@ -9,6 +9,7 @@
   margin-right: 20px;
   height: 190px;
   width: 190px;
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -57,6 +58,7 @@
   cursor: pointer;
   padding: 0;
   opacity: 0.5;
+  font-weight: 500;
 }
 
 .profile__edit-btn:hover {
@@ -90,6 +92,7 @@
     flex-direction: column;
     max-width: 288px;
     width: 100%;
+    box-sizing: border-box;
     /*align-items: stretch;
     text-align: left;
     padding-top: 20px;

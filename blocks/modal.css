@@ -3,7 +3,7 @@
   justify-content: center;
   visibility: hidden;
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
-  display: flex; /* hidden until opened */
+  display: none; /* hidden until opened */
   align-items: center;
   background-color: #000;
   padding: 1rem; /* breathing room on small screens*/
@@ -16,6 +16,7 @@
 
 .modal_is-opened {
   visibility: visible;
+  display: flex;
 }
 
 .modal__container {

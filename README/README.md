@@ -76,3 +76,7 @@ spots/
 │  └─ readme/       (screenshots for this README)
 └─ favicon.ico
 ```
+
+## Link to Github
+
+https://github.com/bluestem16173/se_project_spots/settings/pages

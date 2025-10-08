@@ -13,20 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     editProfileModal.classList.remove("modal_is-opened");
   });
 
-  /* const addProfileBtn = document.querySelector(".profile__add-btn");
-  const newPostModal = document.querySelector("#new-post-modal");
-  if (!addProfileBtn || !newPostmodal) return;
-
-  const submitBtn = newPostModal.querySelector(".modal__close-btn");
-
-  addProfileBtn.addEventListener("click", () => {
-    newPostModal.classList.add("modal_is-opened");
-  });
-
-  submitBtn?.addEventListener("click", () => {
-    newPostModal.classList.remove("modal_is-opened");
-  });
-});*/
   const addProfileBtn = document.querySelector(".profile__add-btn");
   const newPostModal = document.querySelector("#new-post-modal");
   const newPostCloseBtn = newPostModal?.querySelector(".modal__close-btn");

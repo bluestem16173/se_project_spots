@@ -29,11 +29,10 @@
   /*max-width: 730px;*/
   overflow: auto;
   box-sizing: border-box;
-  background: #fff;
   border-radius: 8px;
-  padding: 32px 50px;
   background-color: #fff;
   position: relative;
+  padding: 32px 50px;
 }
 
 .modal__close-btn {
@@ -54,8 +53,6 @@
   display: flex;
   align-items: center; /* vertically aligns with the h2 */
   justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 50px;
 }
 
 .modal__title {
@@ -71,7 +68,7 @@
 .modal__form {
   display: grid;
   gap: 32px;
-  padding: 32px 50px;
+
 }
 
 .modal__label {
@@ -84,14 +81,16 @@
   border: 1px solid #d0d0d0;
   margin: 8px 0 0;
   width: 100%;
-  padding: 25px 0px;
+  padding: 15px 0px;
   border-radius: 8px;
   font: inherit;
+  height: 48px;
 }
 
 .modal__input::placeholder {
   color: #2121214d;
-  font-size: 25px;
+  font-size: 20px;
+
 }
 
 .modal__submit-btn {
@@ -109,37 +108,64 @@
 }
 
 @media (max-width: 360px) {
+
+    .modal{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .modal__container {
+      border-radius: 8px;
+    /*margin: 222px, 10px;*/
+      padding: 12px;
+      inline-size: 100%;
+      overflow: auto;
+      box-sizing: border-box;
+      background: #fff;
+      position: relative;
+    }
+
   .modal__header {
     display: flex;
     align-items: center; /* vertically aligns with the h2 */
     justify-content: space-between;
+    height: 40px;
     margin: 0;
-  }
-  .modal__container {
-    border-radius: 8px;
-    padding: 12px;
-    inline-size: 100%;
-    overflow: auto;
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 8px;
-    position: relative;
+   }
+
+    .modal__title{
+    font-size: 20px;
+    height: 40px;
+    margin: 0;  
+    
   }
 
   .modal__form {
-    height: 336px;
     max-width: 100%;
     gap: 24px;
-    padding: 12px;
+    height: 336px;
+    margin-top: 24px;
+   
+    
   }
+   .modal__label{ 
+     /*margin: 24px 0;*/
+     height: 74px;
+     /*margin: 12px 0px;*/
+     
+   }
   .modal__input {
     max-width: 100%;
     inline-size: 100%;
+    /*padding: 20px 0px;*/
+    gap: 24px;
+    
   }
 
   .modal__submit-btn {
     max-width: 100%;
     gap: 0;
-    margin-top: 32px;
+    height: 64px;
+   
   }
 }

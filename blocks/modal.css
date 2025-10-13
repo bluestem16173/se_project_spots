@@ -2,8 +2,9 @@
   position: fixed;
   justify-content: center;
   visibility: hidden;
+  pointer-events: none;
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
-  display: none; /* hidden until opened */
+  display: grid; /* hidden until opened */
   align-items: center;
   background-color: #000;
   padding: 1rem; /* breathing room on small screens*/
@@ -12,13 +13,23 @@
   padding-block-start: clamp(16px, 20vh, 207px);
   padding-inline: clamp(16px, 33vw, 355px);
   padding-block-end: clamp(16px, 20vh, 207px);*/
+    opacity: 0;
+    transition:
+    background-color .53s ease,
+    opacity .53s ease,
+    visibility 0s linear .53s;  
 }
 
 .modal_is-opened {
   visibility: visible;
   display: flex;
+  pointer-events: auto;
+  opacity: 1;
+  transition:
+    background-color .53s ease .04s,
+    opacity .53s ease .04s,
+    visibility 0.5s;                      
 }
-
 .modal__container {
   inline-size: min(730px, 100%);
   /* height hugs content, but never taller than 480px or viewport */
@@ -33,6 +44,17 @@
   background-color: #fff;
   position: relative;
   padding: 32px 50px;
+  transform: translateY(8px) scale(.985);
+  opacity: 0;
+  transition:
+    opacity .53s ease .08s,
+    transform .57s cubic-bezier(.2,.7,.2,1) .06s;
+  will-change: transform, opacity
+}
+
+.modal_is-opened .modal__container {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
 .modal__close-btn {
@@ -48,6 +70,7 @@
   color: #666; /* subtle by default */
   cursor: pointer;
   opacity: 0.4;
+  transition: opacity .63s ease, transform .63s ease;
 }
 .modal__header {
   display: flex;

@@ -19,10 +19,21 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!editProfileBtn || !editProfileModal) return;
 
   const closeBtn = editProfileModal.querySelector(".modal__close-btn");
-
+  const profileNameEl  = document.querySelector(".profile__name");      // e.g. <h1 class="profile__name">
+  const profileDescriptionEl   = document.querySelector(".profile__description");       // e.g. <span class="profile__age">
+  const editProfileFormEl      = editProfileModal.querySelector(".modal__form");// your edit form inside the modal
+  const editProfileNameInput = editProfileModal.querySelector("#profile-name-input"); // <input id="profile-name-input">
+  const editProfileDescriptionInput  = editProfileModal.querySelector("#profile-description-input"); 
+ 
   editProfileBtn.addEventListener("click", () => {
     editProfileModal.classList.add("modal_is-opened");
-  });
+     
+      editProfileNameInput.value = profileNameEl.textContent;
+      editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+    }
+
+
+  );
 
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
@@ -35,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const newPostCloseBtn = newPostModal
     ? newPostModal.querySelector(".modal__close-btn")
     : null;
+  const addCardFormEl = newPostModal.querySelector(".modal__form");
+  const addCaptionInput = newPostModal.querySelector("#profile-caption-input")
+  const addLinkInput = newPostModal.querySelector("#card-image-input")
 
   if (addProfileBtn && newPostModal) {
     addProfileBtn.addEventListener("click", () => {
@@ -47,7 +61,26 @@ document.addEventListener("DOMContentLoaded", () => {
       newPostModal.classList.remove("modal_is-opened");
     });
   }
+   function handleProfileFormElSubmit(evt) {
+  // Prevent default browser behavior.
+    evt.preventDefault(); 
+     profileNameEl.textContent =  editProfileNameInput.value;
+      profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+     editProfileModal.classList.remove("modal_is-opened");
+    }
+    editProfileFormEl.addEventListener("submit", handleProfileFormElSubmit)
+
+    function handleAddCardFormElSubmit(evt) {
+  // Prevent default browser behavior.
+    evt.preventDefault(); 
+    const link = addLinkInput.value.trim();      // 2) Read the image URL.
+    const name = addcaptionInput.value.trim(); 
+    console.log("New Post data:", { link, name });
+     editProfileModal.classList.remove("modal_is-opened");}
+
+     addCardFormEl.addEventListener('submit', handleAddCardFormElSubmit);
+ 
 });
 
 // quick sanity check
-initialCards.forEach(({ name }) => console.log(name));
+initialCards.forEach(({name}) => console.log(name));

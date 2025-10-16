@@ -11,32 +11,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----- Profile modal wiring -----
   const editProfileBtn = document.querySelector(".profile__edit-btn");
   const editProfileModal = document.querySelector("#edit-profile-modal");
-  const closeBtn = editProfileModal?.querySelector(".modal__close-btn");
+
+  // query children only if parent exists
+  let closeBtn, editProfileFormEl, editProfileNameInput, editProfileDescriptionInput;
+  if (editProfileModal) {
+    closeBtn = editProfileModal.querySelector(".modal__close-btn");
+    editProfileFormEl = editProfileModal.querySelector(".modal__form");
+    editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
+    editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
+  }
+
   const profileNameEl = document.querySelector(".profile__name");
   const profileDescriptionEl = document.querySelector(".profile__description");
-  const editProfileFormEl = editProfileModal?.querySelector(".modal__form");
-  const editProfileNameInput = editProfileModal?.querySelector("#profile-name-input");
-  const editProfileDescriptionInput = editProfileModal?.querySelector("#profile-description-input");
 
-  if (editProfileBtn && editProfileModal && editProfileFormEl && editProfileNameInput && editProfileDescriptionInput) { // CHANGED: guard the section instead of returning
+  if (editProfileBtn && editProfileModal && editProfileFormEl && editProfileNameInput && editProfileDescriptionInput) {
     editProfileBtn.addEventListener("click", () => {
-      //editProfileModal.classList.add("modal_is-opened");
       openModal(editProfileModal);
-
-      editProfileNameInput.value = profileNameEl.textContent;
-      editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+      editProfileNameInput.value = profileNameEl ? profileNameEl.textContent : "";
+      editProfileDescriptionInput.value = profileDescriptionEl ? profileDescriptionEl.textContent : "";
     });
 
-    closeBtn?.addEventListener("click", () => {
-      //editProfileModal.classList.remove("modal_is-opened");
-      closeModal(editProfileModal);
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        closeModal(editProfileModal);
+      });
+    }
 
     function handleProfileFormElSubmit(evt) {
       evt.preventDefault();
-      profileNameEl.textContent = editProfileNameInput.value.trim();
-      profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
-      //editProfileModal.classList.remove("modal_is-opened");
+      if (profileNameEl) profileNameEl.textContent = editProfileNameInput.value.trim();
+      if (profileDescriptionEl) profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
       closeModal(editProfileModal);
     }
     editProfileFormEl.addEventListener("submit", handleProfileFormElSubmit);
@@ -57,13 +61,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----- New post modal wiring -----
   const addProfileBtn = document.querySelector(".profile__add-btn");
   const newPostModal = document.querySelector("#new-post-modal");
-  // if (!newPostModal) return; // CHANGED: don’t exit the whole handler
 
-  const newPostCloseBtn = newPostModal?.querySelector(".modal__close-btn");
-  const addCardFormEl = newPostModal?.querySelector(".modal__form");
-  const addCaptionInput = newPostModal?.querySelector("#profile-caption-input");
-  const addLinkInput = newPostModal?.querySelector("#card-image-input");
-  const cardsContainer = document.querySelector(".cards"); // ✅ make sure this exists in HTML
+  let newPostCloseBtn, addCardFormEl, addCaptionInput, addLinkInput;
+  if (newPostModal) {
+    newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+    addCardFormEl = newPostModal.querySelector(".modal__form");
+    addCaptionInput = newPostModal.querySelector("#profile-caption-input");
+    addLinkInput = newPostModal.querySelector("#card-image-input");
+  }
+
+  const cardsContainer = document.querySelector(".cards"); // keep as-is per your code
 
   function createCard({ name, link }) {
     const li = document.createElement("li");
@@ -75,14 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return li;
   }
 
-  if (addProfileBtn && newPostModal && addCardFormEl && addCaptionInput && addLinkInput && cardsContainer) { // CHANGED: guard this section instead of returning
-    addProfileBtn?.addEventListener("click", () => {
+  if (addProfileBtn && newPostModal && addCardFormEl && addCaptionInput && addLinkInput && cardsContainer) {
+    addProfileBtn.addEventListener("click", () => {
       newPostModal.classList.add("modal_is-opened");
     });
 
-    newPostCloseBtn?.addEventListener("click", () => {
-      newPostModal.classList.remove("modal_is-opened");
-    });
+    if (newPostCloseBtn) {
+      newPostCloseBtn.addEventListener("click", () => {
+        newPostModal.classList.remove("modal_is-opened");
+      });
+    }
 
     function handleAddCardFormElSubmit(evt) {
       evt.preventDefault();

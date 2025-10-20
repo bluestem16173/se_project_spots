@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const editProfileBtn = document.querySelector(".profile__edit-btn");
   const editProfileModal = document.querySelector("#edit-profile-modal");
 
-  // query children only if parent exists
   let closeBtn, editProfileFormEl, editProfileNameInput, editProfileDescriptionInput;
   if (editProfileModal) {
     closeBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -46,17 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
     editProfileFormEl.addEventListener("submit", handleProfileFormElSubmit);
   }
 
-  // --- modal helpers (unchanged) ---
+  // --- modal helpers ---
   function openModal(modal) {
     if (!modal) return;
     modal.classList.add("modal_is-opened");
   }
-
   function closeModal(modal) {
     if (!modal) return;
     modal.classList.remove("modal_is-opened");
   }
-  // --- end helpers ---
 
   // ----- New post modal wiring -----
   const addProfileBtn = document.querySelector(".profile__add-btn");
@@ -70,19 +67,30 @@ document.addEventListener("DOMContentLoaded", () => {
     addLinkInput = newPostModal.querySelector("#card-image-input");
   }
 
-  const cardsContainer = document.querySelector(".cards"); // keep as-is per your code
+  // ----- Cards wiring -----
+  const cardsList = document.querySelector(".cards__list");
+  const cardTemplate = document.getElementById("card-template");
 
-  function createCard({ name, link }) {
-    const li = document.createElement("li");
-    li.className = "card";
-    li.innerHTML = `
-      <img class="card__image" src="${link}" alt="${name}">
-      <h3 class="card__title">${name}</h3>
-    `;
-    return li;
+  function getCardElement({ name, link }) {
+    const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+    const cardImageEl = cardElement.querySelector(".card__image");
+    const cardTitleEl = cardElement.querySelector(".card__title");
+
+    cardImageEl.src = link;
+    cardImageEl.alt = name;
+    cardTitleEl.textContent = name;
+
+    return cardElement;
   }
 
-  if (addProfileBtn && newPostModal && addCardFormEl && addCaptionInput && addLinkInput && cardsContainer) {
+  // Initial render
+  initialCards.forEach((item, i) => {
+    console.log(`[render] #${i}:`, item.name, item.link);
+    cardsList.append(getCardElement(item));
+  });
+
+  // Add new card from modal
+  if (addProfileBtn && newPostModal && addCardFormEl && addCaptionInput && addLinkInput && cardsList) {
     addProfileBtn.addEventListener("click", () => {
       newPostModal.classList.add("modal_is-opened");
     });
@@ -100,15 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = addCaptionInput.value.trim();
       if (!name || !link) return;
 
-      const cardEl = createCard({ name, link });
-      cardsContainer.prepend(cardEl);
+      const cardEl = getCardElement({ name, link });
+      cardsList.prepend(cardEl);
 
       evt.target.reset();
       newPostModal.classList.remove("modal_is-opened");
     }
     addCardFormEl.addEventListener("submit", handleAddCardFormElSubmit);
   }
-}); // closes DOMContentLoaded
-
-// Debug log unchanged
-initialCards.forEach(({ name }) => console.log(name));
+});

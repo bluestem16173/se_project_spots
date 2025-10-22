@@ -20,6 +20,10 @@
     visibility 0s linear .53s;  
 }
 
+.modal_type_preview{
+  padding: 0 
+}
+
 .modal_is-opened {
   visibility: visible;
   display: flex;
@@ -58,6 +62,7 @@
 }
 
 .modal__close-btn {
+  position: absolute;
   background: none; /* no box */
   border: none; /* no box */
   padding: 4px 6px; /* bigger click target, still invisible */
@@ -66,11 +71,14 @@
   right: 50px;
   font: inherit;
   font-size: 1.25rem; /* match/compliment H2 size */
-  line-height: 1;
+  height: 40px;
+  width: 40px;
   color: #666; /* subtle by default */
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.8;
   transition: opacity .63s ease, transform .63s ease;
+  background: transparent url("../images/Close.svg") no-repeat center center;
+  filter: invert(1);
 }
 .modal__header {
   display: flex;
@@ -130,7 +138,30 @@
   width: 100%;
 }
 
-@media (max-width: 360px) {
+.modal__image-container {
+  position: relative;         /* anchors the absolute close button */
+}
+
+.modal__image{
+  max-width: 80vw;
+  max-height: 80vh; 
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px; ;
+}
+
+.modal__close_type_preview{ 
+  top: 0px;
+  right: -52.5px;
+
+}
+
+.modal__caption{
+  color: #fff ;
+}
+
+@media screen and (max-width: 360px) {
 
     .modal{
       padding-left: 10px;
@@ -190,5 +221,17 @@
     gap: 0;
     height: 64px;
    
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .modal__close_type_preview{ 
+    top: -48px;
+    right: 0px;
+
+  }
+  .modal__image{
+    max-width: unset;
+    
   }
 }

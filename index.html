@@ -54,6 +54,10 @@
 
 <template id="card-template">
   <li class="card">
+     <button
+        type="button"
+        class="card__delete-btn"
+        ></button>
     <img class="card__image" />
     <div class="card__content">
       <h2 class="card__title"></h2>
@@ -71,7 +75,7 @@
           <div class="modal__header">
             <h2 class="modal__title">Edit Profile</h2>
             <button type="button" class="modal__close-btn">
-              <img src="./images/close icon.svg" alt="" aria-hidden="true" />
+              <img src="./images/closeicon.svg" alt="" aria-hidden="true"/>
             </button>
           </div>
           <form class="modal__form">
@@ -102,7 +106,7 @@
           <div class="modal__header">
             <h2 class="modal__title">New Post</h2>
             <button type="button" class="modal__close-btn">
-              <img src="./images/close icon.svg" alt="" aria-hidden="true" />
+              <img src="./images/closeicon.svg" alt="" aria-hidden="true"/>
             </button>
           </div>
           <form class="modal__form">
@@ -128,7 +132,19 @@
           </form>
         </div>
       </div>
-    </div>
+       <div class="modal modal_type_preview" id="preview-modal">
+        <div class="modal__image-container">
+            <button 
+            type="button" 
+            class="modal__close-btn modal__close_type_preview">
+            </button>
+            <img  
+             class="modal__image"
+            src="#" alt=""/>
+            <p class="modal__caption"></p>
+          </div>
+        </div>
+        </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

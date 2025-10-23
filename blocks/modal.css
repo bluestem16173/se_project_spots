@@ -160,11 +160,11 @@
   max-width: 156px;
   width: 100%;
   transition: background-color 160ms ease, transform 80ms ease, box-shadow 160ms ease;
-  --btn-bg-hover: rgb(128, 120, 120);
+  
 }
 
 .modal__submit-btn:hover {
-  background: var(--btn-bg-hover);
+  background: rgb(128, 120, 120);
 }
 
 .modal__image-container {

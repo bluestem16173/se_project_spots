@@ -170,12 +170,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add new card from modal
   if (addProfileBtn && newPostModal && addCardFormEl && addCaptionInput && addLinkInput && cardsList) {
     addProfileBtn.addEventListener("click", () => {
-      newPostModal.classList.add("modal_is-opened");
+      openModal(newPostModal);;
     });
 
     if (newPostCloseBtn) {
       newPostCloseBtn.addEventListener("click", () => {
-        newPostModal.classList.remove("modal_is-opened");
+        closeModal(newPostModal);
       });
     }
 
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cardsList.prepend(cardEl);
 
       evt.target.reset();
-      newPostModal.classList.remove("modal_is-opened");
+      closeModal(newPostModal);
     }
 
     addCardFormEl.addEventListener("submit", handleAddCardFormElSubmit);

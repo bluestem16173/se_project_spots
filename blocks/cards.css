@@ -10,6 +10,9 @@
 
 @media screen and (max-width: 627px) {
   .cards__list {
-    grid-template-columns: repeat(auto-fit, 288px);
+      display: grid;
+    /* auto-fill as many as fit, each at most 288px, but shrink to 100% of the column */
+    grid-template-columns: repeat(auto-fill, minmax(min(288px, 100%), 1fr));
+    gap: 16px;
   }
 }

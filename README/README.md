@@ -28,7 +28,7 @@ This was a project to create a responsive web design project showcasing a profil
 
 <!-- Replace <your-username> with your GitHub username -->
 
-**GitHub Pages:** https://github.com/bluestem16173/se_project_spots.git
+**GitHub Pages:** https://bluestem16173.github.io/se_project_spots/
 
 ## Features
 

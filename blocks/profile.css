@@ -54,10 +54,8 @@
   border-radius: 8px; /* optional, remove if you want square */
   background: transparent; /* flat look, adjust if you want color */
   opacity: 0.7; /* 70% opacity */
-
   cursor: pointer;
   padding: 0;
-  opacity: 0.5;
   font-weight: 500;
 }
 

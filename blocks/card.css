@@ -8,11 +8,13 @@
   border-radius: 12px;
   overflow: hidden;
   position: relative;
+  max-width: 413px;
+  width: 100%;
 }
 
 .card__image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -27,7 +29,6 @@
 .card__content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
   margin-top: 8px;
   padding: 0 8px;
@@ -35,12 +36,17 @@
 }
 
 .card__title {
-  flex: 1 1 0;
-  width: 0;
-  min-width: 0;
+  flex: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;}
+  white-space: nowrap;
+  min-width: 0;
+}
 
 .card__like-btn {
   width: 24px;
@@ -50,6 +56,8 @@
   border: none;
   cursor: pointer;
   opacity: 1;
+  min-width: 24px;
+  min-height: 24px;
 }
 
 .card__like-btn:hover {
@@ -67,16 +75,13 @@
 .card__delete-btn{
   position: absolute;
   background-image: url("../images/Tc.default.svg");
-  top: 32px;
-  right: 32px;
+  right: 10px;
   z-index: 0;
-  width: clamp(28px, 4vw, 36px);
-  height: clamp(28px, 4vw, 36px);
+  width: 32px;
+  height: 32px;
   border: none;
-  border-radius: 50%;
   background: transparent url("../images/Tc.default.svg") no-repeat center;
-  background-size: 60% 60%;     /* scale icon inside circle */
-  box-shadow: 0 0 0 0 rgba(0,0,0,0); /* keeps layout stable */
+  background-size: contain;
   cursor: pointer;
   transition: transform .2s ease, opacity .2s ease;
 }
@@ -86,14 +91,23 @@
 
 
 
-@media screen and (max-width: 627px) {
+/* Mobile alignment fix for 320px to 630px */
+@media screen and (max-width: 630px) and (min-width: 320px) {
+  .card {
+    max-width: 288px;
+  }
   
   .card__title {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
-  .card__image {
-    aspect-ratio: 1 / 1;  /* square on mobile, optional */
 }
+
+@media screen and (max-width: 627px) {
+  .card__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }

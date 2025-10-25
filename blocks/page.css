@@ -6,7 +6,7 @@
 
 .page__section {
   max-width: 1280px;
-  width: 100%;
-  margin-inline: 0 auto;
-  padding-inline: 0;
+  margin-inline:  auto;
+  padding-inline: clamp(12px, 4vw, 32px);
+  box-sizing: border-box;
 }

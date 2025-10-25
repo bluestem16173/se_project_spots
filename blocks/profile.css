@@ -85,6 +85,18 @@
   opacity: 0.8;
 }
 
+/* Mobile alignment fix for 320px to 630px */
+@media screen and (max-width: 630px) and (min-width: 320px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+}
+
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;

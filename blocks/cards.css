@@ -1,18 +1,57 @@
+.cards {
+  padding-top: 40px;
+}
+
 .cards__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 413px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px 20px;
   justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 627px) {
+/* Desktop screens (781px and above) - 3 cards */
+@media screen and (min-width: 781px) {
   .cards__list {
-      display: grid;
-    /* auto-fill as many as fit, each at most 288px, but shrink to 100% of the column */
-    grid-template-columns: repeat(auto-fill, minmax(min(288px, 100%), 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px;
+  }
+}
+
+/* Mobile alignment fix for 320px to 630px */
+@media screen and (max-width: 630px) and (min-width: 320px) {
+  .cards {
+    padding-top: 20px;
+  }
+  
+  .cards__list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 288px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium screens (780px to 630px) - 2 cards */
+@media screen and (max-width: 780px) and (min-width: 630px) {
+  .cards__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile screens (320px and below) - 1 card */
+@media screen and (max-width: 320px) {
+  .cards {
+    padding-top: 20px;
+  }
+  
+  .cards__list {
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 }

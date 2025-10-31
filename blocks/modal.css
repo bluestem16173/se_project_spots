@@ -121,13 +121,13 @@
 
 .modal__form {
   display: grid;
-  gap: 32px;
 
 }
 
 .modal__label {
   display: flex;
   flex-direction: column;
+  margin-bottom: 32px;
 }
 .modal__input {
   display: block;
@@ -139,6 +139,7 @@
   border-radius: 8px;
   font: inherit;
   height: 48px;
+ 
 }
 
 .modal__input::placeholder {
@@ -166,6 +167,13 @@
 .modal__submit-btn:hover {
   background: rgb(128, 120, 120);
 }
+
+.modal__error{
+  display: block;
+  color: red;
+  margin-top: 8px;
+};
+
 
 .modal__image-container {
   position: relative;         /* anchors the absolute close button */

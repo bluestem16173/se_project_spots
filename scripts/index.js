@@ -1,32 +1,18 @@
 const initialCards = [
-  {
-    name: "Golden Gate Bridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-  },
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
+  { name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" },
+  { name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg" },
+  { name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg" },
+  { name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg" },
+  { name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg" },
+  { name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg" },
+  { name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg" },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -54,14 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     editProfileDescriptionInput
   ) {
     editProfileBtn.addEventListener("click", () => {
-      openModal(editProfileModal);
+      window.openModal(editProfileModal);
       editProfileNameInput.value = profileNameEl ? profileNameEl.textContent : "";
       editProfileDescriptionInput.value = profileDescriptionEl ? profileDescriptionEl.textContent : "";
     });
 
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
-        closeModal(editProfileModal);
+        window.closeModal(editProfileModal);
       });
     }
 
@@ -69,21 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
       evt.preventDefault();
       if (profileNameEl) profileNameEl.textContent = editProfileNameInput.value.trim();
       if (profileDescriptionEl) profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
-      closeModal(editProfileModal);
+      window.closeModal(editProfileModal);
     }
 
     editProfileFormEl.addEventListener("submit", handleProfileFormElSubmit);
-  }
-
-  // --- modal helpers ---
-  function openModal(modal) {
-    if (!modal) return;
-    modal.classList.add("modal_is-opened");
-  }
-
-  function closeModal(modal) {
-    if (!modal) return;
-    modal.classList.remove("modal_is-opened");
   }
 
   // ===== Cache preview modal nodes =====
@@ -93,11 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (previewModal) {
     previewImgEl = previewModal.querySelector(".modal__image");
     previewCaptionEl = previewModal.querySelector(".modal__caption");
-    previewModalCloseBtn = previewModal.querySelector(".modal__close-btn"); // <- removed trailing space
+    previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
   }
 
   if (previewModal && previewModalCloseBtn) {
-    previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
+    previewModalCloseBtn.addEventListener("click", () => window.closeModal(previewModal));
   }
 
   // ----- New post modal wiring -----
@@ -111,6 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
     addCardFormEl = newPostModal.querySelector(".modal__form");
     addCaptionInput = newPostModal.querySelector("#profile-caption-input");
     addLinkInput = newPostModal.querySelector("#card-image-input");
+  }
+
+  if (addProfileBtn && newPostModal) {
+    addProfileBtn.addEventListener("click", () => window.openModal(newPostModal));
+    if (newPostCloseBtn) {
+      newPostCloseBtn.addEventListener("click", () => window.closeModal(newPostModal));
+    }
   }
 
   // ----- Cards wiring -----
@@ -152,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         previewImgEl.src = link;
         previewImgEl.alt = name;
         previewCaptionEl.textContent = name;
-        openModal(previewModal);
+        window.openModal(previewModal);
       }
     });
 
@@ -162,23 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial render
   if (cardsList && cardTemplate) {
     initialCards.forEach((item, i) => {
-      console.log(`[render] #${i}:`, item.name, item.link); // fixed template string
+      console.log(`[render] #${i}:`, item.name, item.link);
       cardsList.append(getCardElement(item));
     });
   }
 
   // Add new card from modal
-  if (addProfileBtn && newPostModal && addCardFormEl && addCaptionInput && addLinkInput && cardsList) {
-    addProfileBtn.addEventListener("click", () => {
-      openModal(newPostModal);;
-    });
-
-    if (newPostCloseBtn) {
-      newPostCloseBtn.addEventListener("click", () => {
-        closeModal(newPostModal);
-      });
-    }
-
+  if (addCardFormEl && addCaptionInput && addLinkInput && cardsList) {
     function handleAddCardFormElSubmit(evt) {
       evt.preventDefault();
 
@@ -190,9 +162,18 @@ document.addEventListener("DOMContentLoaded", () => {
       cardsList.prepend(cardEl);
 
       evt.target.reset();
-      closeModal(newPostModal);
+      window.closeModal(newPostModal);
     }
 
     addCardFormEl.addEventListener("submit", handleAddCardFormElSubmit);
   }
 });
+document.querySelectorAll('.modal').forEach((modal) => {
+  const overlayHandler = (e) => {
+    if (e.target === modal) {
+      window.closeModal(modal);
+    }
+  };
+  modal.addEventListener('mousedown', overlayHandler);
+});
+

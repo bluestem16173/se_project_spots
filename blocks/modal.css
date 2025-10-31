@@ -6,13 +6,13 @@
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
   display: grid; /* hidden until opened */
   align-items: center;
-  /* Use ONE background declaration */
+  /* Use one background declaration */
   background: rgba(0, 0, 0, 0.5); /* dim backdrop */
   padding: 1rem; /* breathing room on small screens */
-  /* place-items: center; /* grid-centers the content */  /* <-- remove or fix this line */
+  /* place-items: center;  grid-centers the content */
   /* padding-block-start: clamp(16px, 20vh, 207px);
-  padding-inline: clamp(16px, 33vw, 355px);
-  padding-block-end: clamp(16px, 20vh, 207px); */
+     padding-inline: clamp(16px, 33vw, 355px);
+     padding-block-end: clamp(16px, 20vh, 207px); */
   opacity: 0;
   transition:
     background-color .53s ease,
@@ -20,11 +20,8 @@
     visibility 0s linear .53s;
 }
 
-/* If you want to keep the (commented) place-items hint, do it like this: */
-/* place-items: center;  /* grid-centers the content */ */
-
-.modal_type_preview{
-  padding: 0; /* add semicolon */
+.modal_type_preview {
+  padding: 0;
 }
 
 .modal_is-opened {
@@ -42,8 +39,7 @@
   inline-size: min(730px, 100%);
   /* height hugs content, but never taller than 480px or viewport */
   /* max-width: 730px; */
-  /* max-block-size: min(480px, 90vh); */  /* <-- properly closed comment */
-
+  /* max-block-size: min(480px, 90vh); */
   /* if content is taller than the cap, scroll inside */
   /* max-width: 730px; */
   overflow: auto;
@@ -67,8 +63,8 @@
 
 .modal__close-btn {
   background: transparent url("../images/Close.svg") no-repeat center center;
-  border: none;
-  padding: 4px 6px; /* better click target */
+  border: none; /* no box */
+  padding: 4px 6px; /* bigger click target, still invisible */
   margin: 0;
   font: inherit;
   font-size: 1.25rem; /* match/compliment H2 size */
@@ -85,9 +81,8 @@
   transform: scale(1.1);
 }
 
-/* If you meant the SAME element has both classes, remove the space: 
-   .modal__close-btn.modalclose-btn_type_preview { ... }  */
-.modal__close-btn .modalclose-btn_type_preview{
+/* If you intend the same element to have both classes, use .modal__close-btn.modalclose-btn_type_preview */
+.modal__close-btn .modalclose-btn_type_preview {
   position: absolute;
   background: transparent url("../images/Close.svg") no-repeat center center;
   border: none;
@@ -115,7 +110,7 @@
 .modal__title {
   display: flex;
   width: 100%;
-  align-items: center;
+  align-items: center; /* vertical align with H2 */
   justify-content: space-between;
   gap: 12px;
   font-size: 32px;
@@ -168,17 +163,17 @@
   background: rgb(128, 120, 120);
 }
 
-.modal__error{
+.modal__error {
   display: block;
   color: red;
   margin-top: 8px;
-} /* <-- removed stray semicolon after brace */
+}
 
 .modal__image-container {
   position: relative; /* anchors the absolute close button */
 }
 
-.modal__image{
+.modal__image {
   max-width: 80vw;
   max-height: 80vh;
   width: 100%;
@@ -187,7 +182,7 @@
   border-radius: 8px;
 }
 
-.modalclose-btn_type_preview{
+.modalclose-btn_type_preview {
   top: 0px;
   right: -52.5px;
   position: absolute;
@@ -195,12 +190,12 @@
   opacity: 1;
 }
 
-.modalclose-btn_type_preview:hover{
+.modalclose-btn_type_preview:hover {
   opacity: 0.5;
   transform: scale(1.1);
 }
 
-.modal__caption{
+.modal__caption {
   margin-top: 40px;
   position: absolute;
   left: 0;
@@ -222,7 +217,7 @@
 }
 
 @media screen and (max-width: 360px) {
-  .modal{
+  .modal {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -259,7 +254,7 @@
     margin-top: 24px;
   }
 
-  .modal__label{
+  .modal__label {
     /* margin: 24px 0; */
     height: 74px;
     /* margin: 12px 0px; */
@@ -280,13 +275,14 @@
 }
 
 @media screen and (max-width: 627px) {
-  .modalclose-btn_type_preview{
+  .modalclose-btn_type_preview {
     top: -48px;
     right: 0px;
     position: absolute;
   }
 
-  .modal__image{
+  .modal__image {
     max-width: unset;
   }
 }
+git status

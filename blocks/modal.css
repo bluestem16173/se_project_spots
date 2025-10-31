@@ -6,22 +6,25 @@
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
   display: grid; /* hidden until opened */
   align-items: center;
-  background-color: #000;
-  padding: 1rem; /* breathing room on small screens*/
+  /* Use ONE background declaration */
   background: rgba(0, 0, 0, 0.5); /* dim backdrop */
-  /*place-items: center; /* grid-centers the content
-  padding-block-start: clamp(16px, 20vh, 207px);
+  padding: 1rem; /* breathing room on small screens */
+  /* place-items: center; /* grid-centers the content */  /* <-- remove or fix this line */
+  /* padding-block-start: clamp(16px, 20vh, 207px);
   padding-inline: clamp(16px, 33vw, 355px);
-  padding-block-end: clamp(16px, 20vh, 207px);*/
-    opacity: 0;
-    transition:
+  padding-block-end: clamp(16px, 20vh, 207px); */
+  opacity: 0;
+  transition:
     background-color .53s ease,
     opacity .53s ease,
-    visibility 0s linear .53s;  
+    visibility 0s linear .53s;
 }
 
+/* If you want to keep the (commented) place-items hint, do it like this: */
+/* place-items: center;  /* grid-centers the content */ */
+
 .modal_type_preview{
-  padding: 0 
+  padding: 0; /* add semicolon */
 }
 
 .modal_is-opened {
@@ -32,16 +35,17 @@
   transition:
     background-color .53s ease .04s,
     opacity .53s ease .04s,
-    visibility 0.5s;                      
+    visibility 0.5s;
 }
+
 .modal__container {
   inline-size: min(730px, 100%);
   /* height hugs content, but never taller than 480px or viewport */
-  /*max-width: 730px;*/
-  /*max-block-size: min(480px, 90vh);
+  /* max-width: 730px; */
+  /* max-block-size: min(480px, 90vh); */  /* <-- properly closed comment */
 
   /* if content is taller than the cap, scroll inside */
-  /*max-width: 730px;*/
+  /* max-width: 730px; */
   overflow: auto;
   box-sizing: border-box;
   border-radius: 8px;
@@ -53,7 +57,7 @@
   transition:
     opacity .53s ease .08s,
     transform .57s cubic-bezier(.2,.7,.2,1) .06s;
-  will-change: transform, opacity
+  will-change: transform, opacity;
 }
 
 .modal_is-opened .modal__container {
@@ -62,10 +66,9 @@
 }
 
 .modal__close-btn {
-  
-  background: none; /* no box */
-  border: none; /* no box */
-  padding: 4px 6px; /* bigger click target, still invisible */
+  background: transparent url("../images/Close.svg") no-repeat center center;
+  border: none;
+  padding: 4px 6px; /* better click target */
   margin: 0;
   font: inherit;
   font-size: 1.25rem; /* match/compliment H2 size */
@@ -75,31 +78,31 @@
   cursor: pointer;
   opacity: 1;
   transition: opacity .63s ease, transform .63s ease;
-  background: transparent url("../images/Close.svg") no-repeat center center;
-  
 }
+
 .modal__close-btn:hover {
   opacity: 0.5;
   transform: scale(1.1);
 }
 
+/* If you meant the SAME element has both classes, remove the space: 
+   .modal__close-btn.modalclose-btn_type_preview { ... }  */
 .modal__close-btn .modalclose-btn_type_preview{
   position: absolute;
-  background: none; /* no box */
-  border: none; /* no box */
-  padding: 4px 6px; /* bigger click target, still invisible */
+  background: transparent url("../images/Close.svg") no-repeat center center;
+  border: none;
+  padding: 4px 6px;
   margin: 0;
   top: 0px;
   right: -52.5px;
   font: inherit;
-  font-size: 1.25rem; /* match/compliment H2 size */
+  font-size: 1.25rem;
   height: 40px;
   width: 40px;
-  color: #666; /* subtle by default */
+  color: #666;
   cursor: pointer;
   opacity: 0.8;
   transition: opacity .63s ease, transform .63s ease;
-  background: transparent url("../images/Close.svg") no-repeat center center;
   filter: invert(1);
 }
 
@@ -112,7 +115,7 @@
 .modal__title {
   display: flex;
   width: 100%;
-  align-items: center; /* vertical align with H2 */
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   font-size: 32px;
@@ -121,7 +124,6 @@
 
 .modal__form {
   display: grid;
-
 }
 
 .modal__label {
@@ -129,6 +131,7 @@
   flex-direction: column;
   margin-bottom: 32px;
 }
+
 .modal__input {
   display: block;
   box-sizing: border-box;
@@ -139,13 +142,11 @@
   border-radius: 8px;
   font: inherit;
   height: 48px;
- 
 }
 
 .modal__input::placeholder {
   color: #2121214d;
   font-size: 20px;
-
 }
 
 .modal__submit-btn {
@@ -161,7 +162,6 @@
   max-width: 156px;
   width: 100%;
   transition: background-color 160ms ease, transform 80ms ease, box-shadow 160ms ease;
-  
 }
 
 .modal__submit-btn:hover {
@@ -172,20 +172,19 @@
   display: block;
   color: red;
   margin-top: 8px;
-};
-
+} /* <-- removed stray semicolon after brace */
 
 .modal__image-container {
-  position: relative;         /* anchors the absolute close button */
+  position: relative; /* anchors the absolute close button */
 }
 
 .modal__image{
   max-width: 80vw;
-  max-height: 80vh; 
+  max-height: 80vh;
   width: 100%;
   object-fit: contain;
   display: block;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 .modalclose-btn_type_preview{
@@ -194,51 +193,50 @@
   position: absolute;
   filter: invert(1);
   opacity: 1;
-
 }
+
 .modalclose-btn_type_preview:hover{
   opacity: 0.5;
   transform: scale(1.1);
 }
 
 .modal__caption{
-    margin-top: 40px;
-    position: absolute;
-    left: 0;
-    top: calc(100% - 32px);
-    max-width: 214px;
-    max-height: 32px;
-    padding: 4px 8px;
-    display: inline-flex;
-   align-items: center;
-    background: rgba(0, 0, 0, 1);
-    color: #fff;
-    border-radius: 8px;
-    font-size: 14px;
-    line-height: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    pointer-events: none;
+  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 32px);
+  max-width: 214px;
+  max-height: 32px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 360px) {
+  .modal{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-    .modal{
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .modal__container {
-      border-radius: 8px;
-    /*margin: 222px, 10px;*/
-      padding: 12px;
-      inline-size: 100%;
-      overflow: auto;
-      box-sizing: border-box;
-      background: #fff;
-      position: relative;
-    }
+  .modal__container {
+    border-radius: 8px;
+    /* margin: 222px, 10px; */
+    padding: 12px;
+    inline-size: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+  }
 
   .modal__header {
     display: flex;
@@ -246,13 +244,12 @@
     justify-content: space-between;
     height: 40px;
     margin: 0;
-   }
+  }
 
-    .modal__title{
+  .modal__title{
     font-size: 20px;
     height: 40px;
-    margin: 0;  
-    
+    margin: 0;
   }
 
   .modal__form {
@@ -260,40 +257,36 @@
     gap: 24px;
     height: 336px;
     margin-top: 24px;
-   
-    
   }
-   .modal__label{ 
-     /*margin: 24px 0;*/
-     height: 74px;
-     /*margin: 12px 0px;*/
-     
-   }
+
+  .modal__label{
+    /* margin: 24px 0; */
+    height: 74px;
+    /* margin: 12px 0px; */
+  }
+
   .modal__input {
     max-width: 100%;
     inline-size: 100%;
-    /*padding: 20px 0px;*/
+    /* padding: 20px 0px; */
     gap: 24px;
-    
   }
 
   .modal__submit-btn {
     max-width: 100%;
     gap: 0;
     height: 64px;
-   
   }
 }
 
 @media screen and (max-width: 627px) {
-  .modalclose-btn_type_preview{ 
+  .modalclose-btn_type_preview{
     top: -48px;
     right: 0px;
     position: absolute;
-
   }
+
   .modal__image{
     max-width: unset;
-    
   }
 }

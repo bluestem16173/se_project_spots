@@ -103,11 +103,3 @@
     overflow: hidden;
   }
 }
-
-@media screen and (max-width: 627px) {
-  .card__title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-}

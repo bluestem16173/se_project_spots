@@ -82,24 +82,7 @@
 }
 
 /* If you intend the same element to have both classes, use .modal__close-btn.modalclose-btn_type_preview */
-.modal__close-btn .modalclose-btn_type_preview {
-  position: absolute;
-  background: transparent url("../images/Close.svg") no-repeat center center;
-  border: none;
-  padding: 4px 6px;
-  margin: 0;
-  top: 0px;
-  right: -52.5px;
-  font: inherit;
-  font-size: 1.25rem;
-  height: 40px;
-  width: 40px;
-  color: #666;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity .63s ease, transform .63s ease;
-  filter: invert(1);
-}
+
 
 .modal__header {
   display: flex;
@@ -143,6 +126,18 @@
   color: #2121214d;
   font-size: 20px;
 }
+.modal__input_type_error {
+  border-color: #d93025;
+  background-color: #fff6f6;
+}
+
+.modal__input_type_error,
+.modalinput_type_error {
+  border-color: #d93025;            
+  outline: 2px solid rgba(217,48,37,.2); 
+  background-color: #fff6f6; 
+  display: block;      
+}
 
 .modal__submit-btn {
   padding: 18px 32px;
@@ -163,12 +158,41 @@
   background: rgb(128, 120, 120);
 }
 
-.modal__error {
-  display: block;
-  color: red;
-  margin-top: 8px;
+.modal__submit-btn_disabled,
+.modalsubmit-btn_disabled,
+.modal__submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #9aa3af;
+  color: #f3f4f6;
+  pointer-events: none;          /* ignore clicks/hover */
+  transform: none;
+  box-shadow: none;
 }
 
+.modal__submit-btn:not(:disabled):not(.modal__submit-btn_disabled):not(.modalsubmit-btn_disabled):hover {
+  background: rgb(128, 120, 120);
+  transform: scale(1.01);
+} 
+
+.modal__error,
+.modalerror {
+  display: block;          /* keep block formatting context */
+  visibility: hidden;      /* hide text but preserve layout if needed */
+  margin-top: 0;           /* remove spacing when hidden */
+  color: red;
+  min-height: 0;           /* avoid unwanted space */
+}
+.modal__error_visible,
+.modalerror_visible {
+  visibility: visible;
+  margin-top: 8px;         /* add spacing only when shown */
+}
+
+.modal__error:empty,
+.modalerror:empty {
+  display: none;
+}
 .modal__image-container {
   position: relative; /* anchors the absolute close button */
 }
@@ -182,17 +206,12 @@
   border-radius: 8px;
 }
 
-.modalclose-btn_type_preview {
+.modal__close-btn_type_preview {
   top: 0px;
   right: -52.5px;
   position: absolute;
   filter: invert(1);
   opacity: 1;
-}
-
-.modalclose-btn_type_preview:hover {
-  opacity: 0.5;
-  transform: scale(1.1);
 }
 
 .modal__caption {
@@ -275,7 +294,7 @@
 }
 
 @media screen and (max-width: 627px) {
-  .modalclose-btn_type_preview {
+  .modal__close-btn_type_preview  {
     top: -48px;
     right: 0px;
     position: absolute;

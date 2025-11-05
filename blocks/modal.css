@@ -177,22 +177,19 @@
 
 .modal__error,
 .modalerror {
-  display: block;          /* keep block formatting context */
-  visibility: hidden;      /* hide text but preserve layout if needed */
+  display: block; 
+  visibility: hidden;           /* hide text but preserve layout if needed */
   margin-top: 0;           /* remove spacing when hidden */
   color: red;
   min-height: 0;           /* avoid unwanted space */
+  font-size: 12px;
 }
 .modal__error_visible,
 .modalerror_visible {
-  visibility: visible;
+  visibility: visible; 
   margin-top: 8px;         /* add spacing only when shown */
 }
 
-.modal__error:empty,
-.modalerror:empty {
-  display: none;
-}
 .modal__image-container {
   position: relative; /* anchors the absolute close button */
 }

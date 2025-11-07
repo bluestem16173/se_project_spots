@@ -6,19 +6,18 @@
     <meta name="description" content="A Welcoming Coffee Shop with Culture and Education" />
     <meta name="author" content="Adam Hall" />
     <meta name="keywords" content="coffee shop, espresso, online, specialty coffee" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="page">
       <header class="page__section header">
-        <img src="./images/Logo.svg" alt="Spots Logo" class="header__logo" />
+        <img src="<%= require('./images/Logo.svg') %>" alt="Spots Logo" class="header__logo" />
       </header>
 
       <main class="content page__section">
         <section class="profile">
           <img
-            src="./images/avatar.jpg"
+            src="<%= require('./images/avatar.jpg') %>"
             alt="Portrait of Bessie Coleman"
             class="profile__avatar"
           />
@@ -28,13 +27,13 @@
             <p class="profile__description">Civil Aviator</p>
 
             <button class="profile__edit-btn" type="button">
-              <img src="./images/Pencil.svg" alt="" aria-hidden="true" />
+              <img src="<%= require('./images/Pencil.svg') %>" alt="" aria-hidden="true" />
               <span>Edit Profile</span>
             </button>
           </div>
 
           <button class="profile__add-btn" type="button">
-            <img src="./images/Plus.svg" alt="" aria-hidden="true" />
+            <img src="<%= require('./images/Plus.svg') %>" alt="" aria-hidden="true" />
             <span>New Post</span>
           </button>
         </section>
@@ -152,8 +151,5 @@
         </div>
       </div>
     </div>
-
-    <script defer src="./scripts/index.js"></script>
-    <script defer src="./scripts/validation.js"></script>
   </body>
 </html>

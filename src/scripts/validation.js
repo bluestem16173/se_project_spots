@@ -1,7 +1,7 @@
 /**********************
  *  CONFIG (cfg)
  **********************/
-const cfg = {
+export const cfg = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
@@ -10,11 +10,10 @@ const cfg = {
   errorSuffix: "-error",
   errorVisibleClass: "modal__error_visible"
 };
-
 /**********************
  *  VALIDATION
  **********************/
-function enableValidation(cfg) {
+export function enableValidation(cfg) {
   const forms = [...document.querySelectorAll(cfg.formSelector)];
   forms.forEach((form) => {
     form.setAttribute("novalidate", "");              // keep native bubbles off
@@ -85,7 +84,7 @@ function resetValidation(form, cfg, { resetFields = false } = {}) {
 /**********************
  *  MODAL + ESC (single source of truth)
  **********************/
-const OPEN_CLASS = "modal_is-opened";
+const OPEN_CLASS = "modal_opened";
 let activeModal = null;
 let escAttached = false;
 
@@ -123,4 +122,3 @@ window.closeModal = closeModal;
 /**********************
  *  BOOTSTRAP
  **********************/
-enableValidation(cfg);

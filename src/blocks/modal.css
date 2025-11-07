@@ -24,7 +24,7 @@
   padding: 0;
 }
 
-.modal_is-opened {
+.modal_opened {
   visibility: visible;
   display: flex;
   pointer-events: auto;
@@ -56,7 +56,7 @@
   will-change: transform, opacity;
 }
 
-.modal_is-opened .modal__container {
+.modal_opened .modal__container {
   transform: translateY(0) scale(1);
   opacity: 1;
 }

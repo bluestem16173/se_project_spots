@@ -1,6 +1,7 @@
 import "./index.css";
 import { openModal, closeModal } from "../scripts/modal.js";
 import { enableValidation } from "../scripts/validation.js";
+import avatarImage from "../images/avatar.jpg";
 
 const initialCards = [
   {
@@ -39,7 +40,8 @@ const validationConfig = {
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible"
+  errorSuffix: "-error",
+  errorVisibleClass: "modal__error_visible"
 };
 
 function initModals() {
@@ -172,6 +174,11 @@ function renderInitialCards(previewCtx) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const profileAvatar = document.querySelector(".profile__avatar");
+  if (profileAvatar) {
+    profileAvatar.src = avatarImage;
+  }
+
   initModals();
   enableValidation(validationConfig);
 });

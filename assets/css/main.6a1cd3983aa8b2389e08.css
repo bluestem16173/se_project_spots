@@ -1,0 +1,1074 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Regular"), local("Poppins-Regular"),
+    url(../../assets/poppins-v24-latin-regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Poppins Bold */
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Bold"), local("Poppins-Bold"),
+    url(../../assets/poppins-v24-latin-700.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* (Optional) Poppins Italic */
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins Italic"), local("Poppins-Italic"),
+    url(../../assets/poppins-v24-latin-italic.woff2) format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+.content {
+  padding: 0 16px;
+}
+
+@media (max-width: 627px) {
+  .page__section { padding-inline: 0; }
+}
+.card {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  padding-top: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  max-width: 413px;
+  width: 100%;
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  cursor: pointer;
+}
+
+.card__image:hover {
+   transition: transform .2s ease, opacity .2s ease;
+}
+  
+
+.card__content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 0 8px;
+  min-width: 0;
+}
+
+.card__title {
+  flex: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.card__like-btn {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: transparent url(../../assets/heart.svg) no-repeat center / contain;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.card__like-btn:hover {
+  opacity: 0.3;
+}
+.card__like-btn_liked{
+  background-image: url(../../assets/redheart.svg);
+  opacity: 1;
+}
+
+.card__like-btn_liked:hover{
+  opacity: 0.4;
+}
+
+.card__delete-btn{
+  position: absolute;
+  background-image: url(../../assets/Tc.default.svg);
+  right: 10px;
+  z-index: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent url(../../assets/Tc.default.svg) no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.card__delete-btn:hover{
+  background-image: url(../../assets/TC.hover.svg);
+}
+
+
+
+/* Mobile alignment fix for 320px to 630px */
+@media screen and (max-width: 630px) and (min-width: 320px) {
+  .card {
+    max-width: 288px;
+  }
+  
+  .card__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.cards {
+  padding-top: 40px;
+}
+
+.cards__list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+  justify-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Desktop screens (781px and above) - 3 cards */
+@media screen and (min-width: 781px) {
+  .cards__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px;
+  }
+}
+
+/* Mobile alignment fix for 320px to 627px */
+@media screen and (max-width: 627px) and (min-width: 320px) {
+  .cards {
+    padding-top: 20px;
+  }
+  
+  .cards__list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 288px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium screens (780px to 627px) - 2 cards */
+@media screen and (max-width: 780px) and (min-width: 627px) {
+  .cards__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile screens (320px and below) - 1 card */
+@media screen and (max-width: 320px) {
+  .cards {
+    padding-top: 20px;
+  }
+  
+  .cards__list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.page {
+  background-color: #fcf5e5;
+  font-family: "Poppins", "Arial", "Helvetica", sans-serif;
+  min-height: 100vh;
+}
+
+.page__section {
+  max-width: 1280px;
+  margin-inline:  auto;
+  padding-inline: clamp(12px, 4vw, 32px);
+  box-sizing: border-box;
+}
+
+.profile {
+  display: flex;
+  padding-top: 34px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+}
+
+.profile__avatar {
+  margin-right: 20px;
+  height: 190px;
+  width: 190px;
+  border-radius: 8px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 6px;
+  font-size: 32px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__description {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__edit-btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center; /* vertical centering */
+  gap: 8px; /* space between icon and text */
+
+  width: fit-content; /* Hug content width */
+  height: auto; /* Hug content height */
+
+  border: none; /* flat button, no default border */
+  border-radius: 8px; /* optional, remove if you want square */
+  background: transparent; /* flat look, adjust if you want color */
+  opacity: 0.7; /* 70% opacity */
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+}
+
+.profile__edit-btn:hover {
+  opacity: 1;
+}
+
+.profile__add-btn {
+  margin-left: auto;
+  margin-top: auto;
+  background-color: black;
+  color: #fff;
+  display: flex; /* line up icon + text horizontally */
+  align-items: center; /* vertically center them */
+  gap: 8px; /* spacing between icon and text */
+
+  width: fit-content; /* fixed width */
+  height: 52px; /* fixed height */
+  padding: 18px 32px; /* top/bottom 18px, sides 32px */
+
+  border: none; /* remove default button border */
+  border-radius: 8px; /* rounded corners */
+  cursor: pointer;
+}
+
+.profile__add-btn:hover {
+  opacity: 0.8;
+}
+
+/* Mobile alignment fix for 320px to 630px */
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    width: 100%;
+    box-sizing: border-box;
+    /*align-items: stretch;
+    text-align: left;
+    padding-top: 20px;
+    margin: 0 auto;*/
+  }
+  .profile__name {
+    font-size: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 288px;
+  }
+
+  .profile__description {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    max-width: 288px;
+  }
+
+  .profile__avatar {
+    height: 80px;
+    width: 80px;
+    padding: 0 0 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile__add-btn {
+    flex: 1; /* take up all available flex space */
+    margin-left: 0; /* reset the auto margin */
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    padding: 18px 32px;
+    transition: opacity 0.2s ease;
+  }
+
+  .profile__column {
+    width: 100%;
+    align-items: stretch; /* let inner items stretch full width */
+    text-align: center; /*centers the text in the profile div*/
+  }
+
+  .profile__edit-btn {
+    margin-top: 0; /* override the desktop push-down */
+    width: 100%; /* match add button width */
+    height: auto;
+    align-self: stretch; /* ensure full width inside column */
+    justify-content: center; /* center icon+label within the full-width btn */
+  }
+  .profile__edit-btn img {
+    width: 16px;
+    height: 16px; /* keeps icon aligned with 16px line height */
+    display: block;
+  }
+
+  .profile__edit-btn:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+.header {
+  background-color: #fff;
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0 auto;
+}
+
+.header__logo {
+  display: block; /* optional, default is inline */
+  margin: 0 auto; /* works if parent is block-based (not needed here with flex) */
+  padding: 10px 0;
+  width: 96px;
+  height: 24px;
+}
+
+
+.footer {
+   display: flex;
+  /* full-bleed background allowed */
+}
+
+.footer__content {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .footer__content { padding-inline: 20px; }
+}
+
+
+
+
+.modal {
+  position: fixed;
+  justify-content: center;
+  visibility: hidden;
+  pointer-events: none;
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  display: grid; /* hidden until opened */
+  align-items: center;
+  /* Use one background declaration */
+  background: rgba(0, 0, 0, 0.5); /* dim backdrop */
+  padding: 1rem; /* breathing room on small screens */
+  /* place-items: center;  grid-centers the content */
+  /* padding-block-start: clamp(16px, 20vh, 207px);
+     padding-inline: clamp(16px, 33vw, 355px);
+     padding-block-end: clamp(16px, 20vh, 207px); */
+  opacity: 0;
+  transition:
+    background-color .53s ease,
+    opacity .53s ease,
+    visibility 0s linear .53s;
+}
+
+.modal_type_preview {
+  padding: 0;
+}
+
+.modal_opened {
+  visibility: visible;
+  display: flex;
+  pointer-events: auto;
+  opacity: 1;
+  transition:
+    background-color .53s ease .04s,
+    opacity .53s ease .04s,
+    visibility 0.5s;
+}
+
+.modal__container {
+  inline-size: min(730px, 100%);
+  /* height hugs content, but never taller than 480px or viewport */
+  /* max-width: 730px; */
+  /* max-block-size: min(480px, 90vh); */
+  /* if content is taller than the cap, scroll inside */
+  /* max-width: 730px; */
+  overflow: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #fff;
+  position: relative;
+  padding: 32px 50px;
+  transform: translateY(8px) scale(.985);
+  opacity: 0;
+  transition:
+    opacity .53s ease .08s,
+    transform .57s cubic-bezier(.2,.7,.2,1) .06s;
+  will-change: transform, opacity;
+}
+
+.modal_opened .modal__container {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal__close-btn {
+  background: transparent url(../../assets/Close.svg) no-repeat center center;
+  border: none; /* no box */
+  padding: 4px 6px; /* bigger click target, still invisible */
+  margin: 0;
+  font: inherit;
+  font-size: 1.25rem; /* match/compliment H2 size */
+  height: 40px;
+  width: 40px;
+  color: #666; /* subtle by default */
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .63s ease, transform .63s ease;
+}
+
+.modal__close-btn:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+/* If you intend the same element to have both classes, use .modal__close-btn.modalclose-btn_type_preview */
+
+
+.modal__header {
+  display: flex;
+  align-items: center; /* vertically aligns with the h2 */
+  justify-content: space-between;
+}
+
+.modal__title {
+  display: flex;
+  width: 100%;
+  align-items: center; /* vertical align with H2 */
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.modal__form {
+  display: grid;
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.modal__input {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid #d0d0d0;
+  margin: 8px 0 0;
+  width: 100%;
+  padding: 15px 0px;
+  border-radius: 8px;
+  font: inherit;
+  height: 48px;
+}
+
+.modal__input::placeholder {
+  color: #2121214d;
+  font-size: 20px;
+}
+.modal__input_type_error {
+  border-color: #d93025;
+  background-color: #fff6f6;
+}
+
+.modal__input_type_error,
+.modalinput_type_error {
+  border-color: #d93025;            
+  outline: 2px solid rgba(217,48,37,.2); 
+  background-color: #fff6f6; 
+  display: block;      
+}
+
+.modal__submit-btn {
+  padding: 18px 32px;
+  border: 0;
+  border-radius: 8px;
+  gap: 8px;
+  background: #000;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  justify-self: flex-start;
+  max-width: 156px;
+  width: 100%;
+  transition: background-color 160ms ease, transform 80ms ease, box-shadow 160ms ease;
+}
+
+.modal__submit-btn:hover {
+  background: rgb(128, 120, 120);
+}
+
+.modal__submit-btn_disabled,
+.modalsubmit-btn_disabled,
+.modal__submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #9aa3af;
+  color: #f3f4f6;
+  pointer-events: none;          /* ignore clicks/hover */
+  transform: none;
+  box-shadow: none;
+}
+
+.modal__submit-btn:not(:disabled):not(.modal__submit-btn_disabled):not(.modalsubmit-btn_disabled):hover {
+  background: rgb(128, 120, 120);
+  transform: scale(1.01);
+} 
+
+.modal__error,
+.modalerror {
+  display: block; 
+  visibility: hidden;           /* hide text but preserve layout if needed */
+  margin-top: 0;           /* remove spacing when hidden */
+  color: red;
+  min-height: 0;           /* avoid unwanted space */
+  font-size: 12px;
+}
+.modal__error_visible,
+.modalerror_visible {
+  visibility: visible; 
+  margin-top: 8px;         /* add spacing only when shown */
+}
+
+.modal__image-container {
+  position: relative; /* anchors the absolute close button */
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__close-btn_type_preview {
+  top: 0px;
+  right: -52.5px;
+  position: absolute;
+  filter: invert(1);
+  opacity: 1;
+}
+
+.modal__caption {
+  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 32px);
+  max-width: 214px;
+  max-height: 32px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 360px) {
+  .modal {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .modal__container {
+    border-radius: 8px;
+    /* margin: 222px, 10px; */
+    padding: 12px;
+    inline-size: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+  }
+
+  .modal__header {
+    display: flex;
+    align-items: center; /* vertically aligns with the h2 */
+    justify-content: space-between;
+    height: 40px;
+    margin: 0;
+  }
+
+  .modal__title{
+    font-size: 20px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .modal__form {
+    max-width: 100%;
+    gap: 24px;
+    height: 336px;
+    margin-top: 24px;
+  }
+
+  .modal__label {
+    /* margin: 24px 0; */
+    height: 74px;
+    /* margin: 12px 0px; */
+  }
+
+  .modal__input {
+    max-width: 100%;
+    inline-size: 100%;
+    /* padding: 20px 0px; */
+    gap: 24px;
+  }
+
+  .modal__submit-btn {
+    max-width: 100%;
+    gap: 0;
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .modal__close-btn_type_preview  {
+    top: -48px;
+    right: 0px;
+    position: absolute;
+  }
+
+  .modal__image {
+    max-width: unset;
+  }
+}
+
+
+
+
+
+/*# sourceMappingURL=main.6a1cd3983aa8b2389e08.css.map*/

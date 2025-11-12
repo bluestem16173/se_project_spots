@@ -19,10 +19,12 @@
   border-radius: 8px;
   display: block;
   cursor: pointer;
+  
 }
 
 .card__image:hover {
    transition: transform .2s ease, opacity .2s ease;
+  z-index: 0;
 }
   
 
@@ -33,6 +35,13 @@
   margin-top: 8px;
   padding: 0 8px;
   min-width: 0;
+  width: 100%;
+}
+
+.card__like-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .card__title {
@@ -46,6 +55,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+}
+
+.card__like-count {
+  font-size: 16px;
+  line-height: 1.2;
+  min-width: 1.5ch;
+  text-align: right;
+  color: #000;
+  display: inline-block;
 }
 
 .card__like-btn {
@@ -72,23 +90,28 @@
   opacity: 0.4;
 }
 
-.card__delete-btn{
+.card__delete-btn {
   position: absolute;
-  background-image: url("../images/Tc.default.svg");
   right: 10px;
-  z-index: 0;
   width: 32px;
   height: 32px;
-  border: none;
-  background: transparent url("../images/Tc.default.svg") no-repeat center;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("../images/Tc.default.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
   cursor: pointer;
   transition: transform .2s ease, opacity .2s ease;
 }
-.card__delete-btn:hover{
+
+.card__delete-btn:hover,
+.card__delete-btn:focus-visible {
+  opacity: 0.8;
+  transform: scale(1.05);
   background-image: url("../images/TC.hover.svg");
 }
-
 
 
 /* Mobile alignment fix for 320px to 630px */

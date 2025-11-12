@@ -16,11 +16,18 @@
 
       <main class="content page__section">
         <section class="profile">
-          <img
-            src="<%= require('./images/avatar.jpg') %>"
-            alt="Portrait of Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src="<%= require('./images/avatar.jpg') %>"
+              alt="Portrait of Bessie Coleman"
+              class="profile__avatar"
+            />
+            <button
+              class="profile__avatar-edit-btn"
+              type="button"
+              aria-label="Edit avatar"
+            ></button>
+          </div>
 
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
@@ -47,7 +54,10 @@
               <img class="card__image" alt="" />
               <div class="card__content">
                 <h2 class="card__title"></h2>
-                <button class="card__like-btn" type="button"></button>
+                <div class="card__like-group">
+                  <button class="card__like-btn" type="button"></button>
+                  <span class="card__like-count">0</span>
+                </div>
               </div>
             </li>
           </template>
@@ -135,6 +145,30 @@
               <span id="profile-caption-input-error" class="modal__error"></span>
             </label>
 
+            <button type="submit" class="modal__submit-btn">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ======================= Edit Avatar Modal ======================= -->
+      <div class="modal" id="edit-avatar-modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 class="modal__title">Change Profile Picture</h2>
+            <button type="button" class="modal__close-btn"></button>
+          </div>
+          <form class="modal__form" novalidate>
+            <label for="avatar-link-input" class="modal__label">
+              <span class="modal__label-text">Avatar Link</span>
+              <input
+                id="avatar-link-input"
+                type="url"
+                class="modal__input"
+                placeholder="Paste image link"
+                required
+              />
+              <span id="avatar-link-input-error" class="modal__error"></span>
+            </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>

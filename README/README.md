@@ -83,3 +83,4 @@ https://github.com/bluestem16173/se_project_spots/settings/pages
 
 ## Link to Google Drive
 https://drive.google.com/file/d/13lvMzoo0qU9uRT8MCy7hCoHi2ocDJAtv/view?usp=drive_link
+https://drive.google.com/file/d/1SHZI3kntgbCuirIj4_2-iUx2H9bCzNGL/view?usp=drive_link

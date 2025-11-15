@@ -3,30 +3,7 @@ import { openModal, closeModal } from "../scripts/modal.js";
 import { enableValidation } from "../scripts/validation.js";
 import fallbackAvatar from "../images/avatar.jpg";
 import Api from "../scripts/utils/api.js";
-   
-    /*profileNameEl = select(".profile__name"),
-    profileDescriptionEl = select(".profile__description"),
-    profileAvatarEl = select(".profile__avatar"),
-    profileAvatarBtn= select(".profile__avatar-edit-btn"),
-    editProfileModal= select("#edit-profile-modal"),
-    editProfileForm= select("#edit-profile-modal .modal__form"),
-    editProfileBtn= select(".profile__edit-btn"),
-    editProfileCloseBtn= select("#edit-profile-modal .modal__close-btn"),
-    newPostModal= select("#new-post-modal"),
-    newPostForm= select("#new-post-modal .modal__form"),
-    addProfileBtn= select(".profile__add-btn"),
-    newPostCloseBtn= select("#new-post-modal .modal__close-btn"),
-    cardsList= select(".cards__list"),
-    cardTemplate= select("#card-template"),
-    previewModal= select("#preview-modal"),
-    previewCloseBtn= select("#preview-modal .modal__close-btn"),
-    previewImgEl= select("#preview-modal .modal__image"),
-    previewCaptionEl= select("#preview-modal .modal__caption"),
-    editAvatarModal= select("#edit-avatar-modal"),
-    editAvatarForm= select("#edit-avatar-modal .modal__form"),
-    editAvatarInput= select("#avatar-link-input"),
-    editAvatarCloseBtn= select("#edit-avatar-modal .modal__close-btn")*/
-  
+
 const fallbackCards = [
   {
     name: "Golden Gate Bridge",
@@ -261,16 +238,7 @@ function renderCards(cards = [], elements) {
 
   if (!Array.isArray(cards)) {
     console.log("renderCards received non-array; using fallbackCards");
-  }  
-  /*const { cardsList, cardTemplate, previewModal, previewImgEl, previewCaptionEl } = elements;
-  if (!cardsList) {
-    console.error("cardsList element not found");
-    return;
   }
-  if (!cardTemplate) {
-    console.error("cardTemplate not found");
-    return;
-  }*/
 
   const normalizedCards = Array.isArray(cards)
     ? cards
